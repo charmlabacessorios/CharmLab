@@ -216,6 +216,38 @@ footer a:hover{text-decoration:underline;}
 .city-group{transition:opacity .25s, transform .25s;}
 .city-group.hidden{display:none;}
 
+
+/* ── FLOATING WHATSAPP ── */
+.float-wa {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  width: 56px; height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  z-index: 999;
+  transition: transform .2s, box-shadow .2s;
+  text-decoration: none;
+}
+.float-wa:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(37,211,102,0.55);
+}
+.float-wa::before {
+  content: '';
+  position: absolute;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(37,211,102,0.35);
+  animation: wa-pulse 2s infinite;
+}
+@keyframes wa-pulse {
+  0%   { transform: scale(1);   opacity: .7; }
+  100% { transform: scale(1.7); opacity: 0;  }
+}
+
 /* ── REVEAL ── */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
@@ -260,15 +292,127 @@ footer a:hover{text-decoration:underline;}
   </div>
 
 
-  <!-- CITY FILTER -->
+  <!-- FILTRO -->
   <div class="filter-wrap" id="cityFilter">
     <button class="filter-btn active" onclick="filterCity('all', this)">Todas</button>
-    <button class="filter-btn" onclick="filterCity('santa-fe', this)">Santa Fé do Sul</button>
     <button class="filter-btn" onclick="filterCity('rio-preto', this)">Rio Preto</button>
+    <button class="filter-btn" onclick="filterCity('monte-aprazivel', this)">Monte Aprazível</button>
+    <button class="filter-btn" onclick="filterCity('fernandopolis', this)">Fernandópolis</button>
+    <button class="filter-btn" onclick="filterCity('santa-fe', this)">Santa Fé do Sul</button>
     <button class="filter-btn" onclick="filterCity('jales', this)">Jales</button>
+    <button class="filter-btn" onclick="filterCity('sao-paulo', this)">São Paulo</button>
+    <button class="filter-btn" onclick="filterCity('nhandeara', this)">Nhandeara</button>
+    <button class="filter-btn" onclick="filterCity('poloni', this)">Poloni</button>
   </div>
 
-  <!-- SANTA FÉ DO SUL -->
+  <!-- SÃO JOSÉ DO RIO PRETO — 7 lojas -->
+  <div class="city-group reveal" data-city="rio-preto">
+    <div class="city-label">
+      <div class="city-pin"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
+      <span class="city-name">São José do Rio Preto · SP</span>
+      <span class="city-count">7 lojas</span>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Spazio Sorella</div>
+      <div class="store-address">São José do Rio Preto · SP</div>
+      <div class="store-links">
+        <a href="https://maps.app.goo.gl/zc3WpdKBnSS8JndX8" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/spazio.sorella/" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@spazio.sorella</a>
+      </div>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Unna Esmalteria</div>
+      <div class="store-address">São José do Rio Preto · SP</div>
+      <div class="store-links">
+        <a href="https://maps.app.goo.gl/ZeFFW1X6D3hicefo7" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/unnaesmalteria/" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@unnaesmalteria</a>
+      </div>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Loja Santa Fé Redentora</div>
+      <div class="store-address">São José do Rio Preto · SP</div>
+      <div class="store-links">
+        <a href="https://maps.app.goo.gl/Vm7SN4XuPyhUjyJu6" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/santaferedentora" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@santaferedentora</a>
+      </div>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Sis Baby Kids</div>
+      <div class="store-address">São José do Rio Preto · SP</div>
+      <div class="store-links">
+        <a href="https://maps.app.goo.gl/RpVPduZQxkESAc5EA" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/sisbabykids" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@sisbabykids</a>
+      </div>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Salão Fios</div>
+      <div class="store-address">São José do Rio Preto · SP</div>
+      <div class="store-links">
+        <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x94bdb31ef4f22d1f:0x2d8bbb6248e09e76" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/salao.fios" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@salao.fios</a>
+      </div>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Daniele Garcia Estética Integrada</div>
+      <div class="store-address">São José do Rio Preto · SP</div>
+      <div class="store-links">
+        <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x94bdb3f028b300cf:0xcba0a05f05c86aca" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/danielegarciaestetica" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@danielegarciaestetica</a>
+      </div>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Clínica Mais Fios</div>
+      <div class="store-address">São José do Rio Preto · SP</div>
+      <div class="store-links">
+        <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x94bdb3ab5d1121e5:0xe2e895bc89dec1f2" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/vivirodrigues.maisfios" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@vivirodrigues.maisfios</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTE APRAZÍVEL — 2 lojas -->
+  <div class="city-group reveal" data-city="monte-aprazivel">
+    <div class="city-label">
+      <div class="city-pin"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
+      <span class="city-name">Monte Aprazível · SP</span>
+      <span class="city-count">2 lojas</span>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Balloon Kids</div>
+      <div class="store-address">Monte Aprazível · SP</div>
+      <div class="store-links">
+        <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x94bd9f865cd0d4f9:0x78206e5f37378fb5" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/balloonbabykidsteen" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@balloonbabykidsteen</a>
+      </div>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Gesy Modas</div>
+      <div class="store-address">Monte Aprazível · SP</div>
+      <div class="store-links">
+        <a href="https://maps.app.goo.gl/4axhAhdjU6Jnpuam9" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/gesymodas" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@gesymodas</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FERNANDÓPOLIS — 1 loja -->
+  <div class="city-group reveal" data-city="fernandopolis">
+    <div class="city-label">
+      <div class="city-pin"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
+      <span class="city-name">Fernandópolis · SP</span>
+      <span class="city-count">1 loja</span>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Art Hair Studio Maria Clara</div>
+      <div class="store-address">Fernandópolis · SP</div>
+      <div class="store-links">
+        <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x9497f713fc927421:0xcc2e964e21d25ff8" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/by.mariaclara" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@by.mariaclara</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SANTA FÉ DO SUL — 1 loja -->
   <div class="city-group reveal" data-city="santa-fe">
     <div class="city-label">
       <div class="city-pin"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
@@ -279,56 +423,13 @@ footer a:hover{text-decoration:underline;}
       <div class="store-name">Apoena</div>
       <div class="store-address">Santa Fé do Sul · SP</div>
       <div class="store-links">
-        <a href="https://maps.app.goo.gl/sCUMABuuHXpAQwkS9" target="_blank" class="store-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          Ver no Maps
-        </a>
-        <a href="https://www.instagram.com/apoenasfs/" target="_blank" class="store-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
-          @apoenasfs
-        </a>
+        <a href="https://maps.app.goo.gl/sCUMABuuHXpAQwkS9" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/apoenasfs/" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@apoenasfs</a>
       </div>
     </div>
   </div>
 
-  <!-- SÃO JOSÉ DO RIO PRETO -->
-  <div class="city-group reveal" data-city="rio-preto">
-    <div class="city-label">
-      <div class="city-pin"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
-      <span class="city-name">São José do Rio Preto · SP</span>
-      <span class="city-count">2 lojas</span>
-    </div>
-    <div class="store-card">
-      <div class="store-name">Spazio Sorella</div>
-      <div class="store-address">São José do Rio Preto · SP</div>
-      <div class="store-links">
-        <a href="https://maps.app.goo.gl/zc3WpdKBnSS8JndX8" target="_blank" class="store-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          Ver no Maps
-        </a>
-        <a href="https://www.instagram.com/spazio.sorella/" target="_blank" class="store-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
-          @spazio.sorella
-        </a>
-      </div>
-    </div>
-    <div class="store-card">
-      <div class="store-name">Unna Esmalteria</div>
-      <div class="store-address">São José do Rio Preto · SP</div>
-      <div class="store-links">
-        <a href="https://maps.app.goo.gl/ZeFFW1X6D3hicefo7" target="_blank" class="store-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          Ver no Maps
-        </a>
-        <a href="https://www.instagram.com/unnaesmalteria/" target="_blank" class="store-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
-          @unnaesmalteria
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- JALES -->
+  <!-- JALES — 1 loja -->
   <div class="city-group reveal" data-city="jales">
     <div class="city-label">
       <div class="city-pin"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
@@ -339,14 +440,67 @@ footer a:hover{text-decoration:underline;}
       <div class="store-name">5ª Avenida</div>
       <div class="store-address">Jales · SP</div>
       <div class="store-links">
-        <a href="https://maps.app.goo.gl/Xsfu9bmHTyz1gEzL8" target="_blank" class="store-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          Ver no Maps
-        </a>
-        <a href="https://www.instagram.com/5avenidajales/" target="_blank" class="store-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
-          @5avenidajales
-        </a>
+        <a href="https://maps.app.goo.gl/Xsfu9bmHTyz1gEzL8" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/5avenidajales/" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@5avenidajales</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SÃO PAULO — 1 loja -->
+  <div class="city-group reveal" data-city="sao-paulo">
+    <div class="city-label">
+      <div class="city-pin"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
+      <span class="city-name">São Paulo · SP</span>
+      <span class="city-count">1 loja</span>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Studio Ami</div>
+      <div class="store-address">São Paulo · SP</div>
+      <div class="store-links">
+        <a href="https://maps.app.goo.gl/qCFaeBgoKZ9tv6EL9" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/studioamioficial" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@studioamioficial</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NHANDEARA — 1 loja -->
+  <div class="city-group reveal" data-city="nhandeara">
+    <div class="city-label">
+      <div class="city-pin"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
+      <span class="city-name">Nhandeara · SP</span>
+      <span class="city-count">1 loja</span>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Sandra Manzato</div>
+      <div class="store-address">Nhandeara · SP</div>
+      <div class="store-links">
+        <a href="https://maps.app.goo.gl/bsdZGpwB3E5Vw4z17" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/sandramanzato" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@sandramanzato</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- POLONI — 2 lojas (último conforme pedido) -->
+  <div class="city-group reveal" data-city="poloni">
+    <div class="city-label">
+      <div class="city-pin"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
+      <span class="city-name">Poloni · SP</span>
+      <span class="city-count">2 lojas</span>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Alice Concept Hair Salon</div>
+      <div class="store-address">Poloni · SP</div>
+      <div class="store-links">
+        <a href="https://maps.app.goo.gl/zpnbNNxEr5M13k3i7" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/alicehairoficial" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@alicehairoficial</a>
+      </div>
+    </div>
+    <div class="store-card">
+      <div class="store-name">Bella Vida Cosméticos</div>
+      <div class="store-address">Poloni · SP</div>
+      <div class="store-links">
+        <a href="https://maps.app.goo.gl/Ly1959QSwwwWLjKC6" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Ver no Maps</a>
+        <a href="https://www.instagram.com/bellavida.cosmeticos" target="_blank" class="store-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>@bellavida.cosmeticos</a>
       </div>
     </div>
   </div>
@@ -419,5 +573,16 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:.12});
 els.forEach(r=>obs.observe(r));
 </script>
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://wa.me/5517996120145?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20CharmLab." 
+   target="_blank" 
+   class="float-wa" 
+   aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.523 5.847L.057 23.882l6.19-1.623A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.004-1.369l-.359-.213-3.723.976.994-3.634-.234-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
+  </svg>
+</a>
 </body>
 </html>
